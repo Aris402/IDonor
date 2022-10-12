@@ -1,19 +1,61 @@
-/*Fonts*/
-@font-face {
-    font-family: 'inter';
-    src: url('./fonts/Montserrat-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 .red-Color{
     color: #E83838;
 }
-
 .inter-font{
     font-family: 'Inter', sans-serif !important;
 }
-
 .inter-semibold-font{
     font-weight: 600;
+}
+.inter-bold-font{
+    font-weight: 800;
+}
+.align-text-center{
+    text-align: center;
+}
+.white-font{
+    color: white;
+}
+.red-font{
+    color: #E83838;
+}
+.red-circle{
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #E83838;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px){
+    .welcome-Page{
+        margin: auto;
+        padding: 0 15px 0 15px;
+    }
+    .welcome-texts{
+        margin-bottom: 40px;
+    }
+    .flex-column-mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #logo-Idonor{
+        margin: 15px 0 80px 0;
+    }
+    .red-Button{
+        background-color: #E83838;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        height: 63px;
+        font-size: 16px;
+    }
+    .pink-Button{
+        background-color: #FEC2C2;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        height: 63px;
+        font-size: 16px;
+    }
 }

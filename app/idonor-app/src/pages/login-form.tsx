@@ -22,13 +22,13 @@ const LoginForm = (props:any) => {
             >
                 <Form className="login-form">
                     <div className="login-form-div">
-                        <Field name="email" className="form-field inter-font" placeHolder="Seu email"></Field>
+                        <Field name="email" className="form-field inter-font" placeholder="Seu email"></Field>
 
                         <ErrorMessage name="email" component="span" className="form-error"></ErrorMessage>
                     </div>
 
                     <div className="login-form-div">
-                        <Field name="password" className="form-field inter-font" placeHolder="Sua senha"></Field>
+                        <Field name="password" className="form-field inter-font" placeholder="Sua senha"></Field>
 
                         <ErrorMessage name="password" component="span" className="form-error"></ErrorMessage>
                     </div>
