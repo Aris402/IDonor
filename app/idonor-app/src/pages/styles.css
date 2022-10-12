@@ -1,0 +1,19 @@
+/*Fonts*/
+@font-face {
+    font-family: 'inter';
+    src: url('./fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.red-Color{
+    color: #E83838;
+}
+
+.inter-font{
+    font-family: 'Inter', sans-serif !important;
+}
+
+.inter-semibold-font{
+    font-weight: 600;
+}
