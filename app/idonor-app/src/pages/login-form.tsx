@@ -26,7 +26,7 @@ const LoginForm = (props:any) => {
             >
                 <Form className="login-form">
                     <div className="login-form-div">
-                        <label for="email" className="label">Email</label>
+                        <label htmlFor="email">Email</label>
 
                         <Field name="email" className="form-field inter-font" id="email" placeholder="Seu email"></Field>
 
@@ -34,7 +34,7 @@ const LoginForm = (props:any) => {
                     </div>
 
                     <div className="login-form-div">
-                        <label for="senha" className="label">Senha</label>
+                        <label htmlFor="senha">Senha</label>
 
                         <Field name="password" className="form-field inter-font" id="senha" placeholder="Sua senha"></Field>
 

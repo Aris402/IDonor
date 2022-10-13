@@ -18,7 +18,7 @@ const WelcomePage = (props:any) => {
             <br/>
            <button className='red-Button white-font inter-font' onClick={ () => props.changePage(1) }>Continuar</button>
            <br/>
-           <button className='pink-Button red-font inter-font' onClick={ () => props.changePage(1) }>Inscreva-se</button>
+           <button className='pink-Button red-font inter-font' onClick={ () => props.changePage(2) }>Inscreva-se</button>
         </div>
     )
 }
