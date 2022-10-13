@@ -1,6 +1,7 @@
 import {Formik, Form, Field, ErrorMessage} from "formik"
 import * as React from 'react';
 import * as yup from "yup"
+import Arrow from '../images/left-arrow.png'
 import '../styles/loginsignin.css'
 
 const LoginForm = (props:any) => {
@@ -15,6 +16,7 @@ const LoginForm = (props:any) => {
         }
     return(
         <div className="inter-font container">
+            <img src={Arrow} onClick={() => props.changePage(0)} className="arrowButton" alt="voltar" title="voltar"/>
             <div className="text">
                 <h2>Seja<br/>bem-vindo 🖐️</h2>
                 <p>Entre na sua conta</p>

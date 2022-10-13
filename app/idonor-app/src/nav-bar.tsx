@@ -9,8 +9,8 @@ const Navigation = (props:any) => {
 
     const pages = [
         <WelcomePage changePage={setPage}/>,
-        <LoginForm/>,
-        <SignUpForm/>
+        <LoginForm changePage={setPage}/>,
+        <SignUpForm changePage={setPage}/>
     ]
 
     return(

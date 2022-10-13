@@ -3,6 +3,10 @@
     margin: 2em auto;
 }
 
+.arrowButton {
+    width: 30px;
+}
+
 .text {
     margin-bottom: 60px;
 }
