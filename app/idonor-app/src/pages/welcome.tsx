@@ -2,7 +2,7 @@ import * as React from 'react';
 import logoTipo from '../images/idonor-logo.png'
 import imgBraco from '../images/heart-arm.png'
 
-const WelcomePage = (pros:any) => {
+const WelcomePage = (props:any) => {
     return(
         <div className='welcome-Page flex-column-mobile inter-font'>
             <img src={logoTipo} alt="Logotipo do aplicativo IDonor" title='Logotipo do aplicativo IDonor' id='logo-Idonor'/>
@@ -15,9 +15,9 @@ const WelcomePage = (pros:any) => {
             <div className='red-circle'>
             </div>
             <br/>
-           <button className='red-Button white-font inter-font'>Continuar</button>
+           <button className='red-Button white-font inter-font' onClick={ () => props.changePage(1) }>Continuar</button>
            <br/>
-           <button className='pink-Button red-font inter-font'>Inscreva-se</button>
+           <button className='pink-Button red-font inter-font' onClick={ () => props.changePage(1) }>Inscreva-se</button>
         </div>
     )
 }
