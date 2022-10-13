@@ -1,7 +1,7 @@
 import {Formik, Form, Field, ErrorMessage} from "formik"
 import * as React from 'react';
 import * as yup from "yup"
-import './styles.css'
+import '../styles/loginsignin.css'
 
 const LoginForm = (props:any) => {
     
@@ -14,7 +14,11 @@ const LoginForm = (props:any) => {
             console.log(values)
         }
     return(
-        <div className="inter-font">
+        <div className="inter-font container">
+            <div className="text">
+                <h2>Seja<br/>bem-vindo 🖐️</h2>
+                <p>Entre na sua conta</p>
+            </div>
             <Formik 
                 initialValues={{}} 
                 onSubmit={handleClickLogin}
@@ -22,20 +26,25 @@ const LoginForm = (props:any) => {
             >
                 <Form className="login-form">
                     <div className="login-form-div">
-                        <Field name="email" className="form-field inter-font" placeholder="Seu email"></Field>
+                        <label for="email" className="label">Email</label>
+
+                        <Field name="email" className="form-field inter-font" id="email" placeholder="Seu email"></Field>
 
                         <ErrorMessage name="email" component="span" className="form-error"></ErrorMessage>
                     </div>
 
                     <div className="login-form-div">
-                        <Field name="password" className="form-field inter-font" placeholder="Sua senha"></Field>
+                        <label for="senha" className="label">Senha</label>
+
+                        <Field name="password" className="form-field inter-font" id="senha" placeholder="Sua senha"></Field>
 
                         <ErrorMessage name="password" component="span" className="form-error"></ErrorMessage>
                     </div>
-                    <button className="button" type="submit">Login</button>
+                    <a className="link">Esqueceu a senha?</a>
+                    <button className="red-Button" type="submit">Login</button>
                 </Form>
             </Formik>
-            <p>Não possui uma conta? <a className="red-Color inter-semibold-font" onClick={() => props.changePage(2)}>Inscreva-se</a></p>
+            <p className="align-text-center">Não possui uma conta? <a className="red-Color inter-semibold-font" onClick={() => props.changePage(2)}>Inscreva-se</a></p>
         </div>
     )
 }

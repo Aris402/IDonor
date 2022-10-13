@@ -1,0 +1,38 @@
+.container {
+    max-width: 30em;
+    margin: 2em auto;
+}
+
+.text {
+    margin-bottom: 60px;
+}
+
+.label {
+    display: block;
+    font-weight: 800;
+}
+
+.form-field {
+    background-color: lightgray;
+    color: black;
+    padding: 1.5em;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+.form-error {
+    color: red;
+}
+
+.login-form-div {
+    margin: 2em 0;
+}
+
+.link {
+    display: block;
+    font-weight: 800;
+    color: #E83838;
+    margin-bottom: 2em;
+}

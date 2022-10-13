@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+.red-Color{
+    color: #E83838;
+}
+
+.inter-semibold-font {
+    font-weight: 600;
+}
+
+.inter-bold-font {
+    font-weight: 800;
+}
+
+.inter-font{
+    font-family: 'Inter', sans-serif !important;
+}
+.align-text-center{
+    text-align: center;
+}
+.white-font{
+    color: white;
+}
+.red-font{
+    color: #E83838;
+}
+
+.red-Button{
+    background-color: #E83838;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 63px;
+    font-size: 16px;
+}

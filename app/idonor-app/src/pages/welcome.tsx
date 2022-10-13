@@ -1,6 +1,7 @@
 import * as React from 'react';
 import logoTipo from '../images/idonor-logo.png'
 import imgBraco from '../images/heart-arm.png'
+import '../styles/welcome.css'
 
 const WelcomePage = (props:any) => {
     return(
