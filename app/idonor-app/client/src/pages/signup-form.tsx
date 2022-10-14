@@ -3,6 +3,7 @@ import * as React from 'react';
 import * as yup from "yup"
 import Arrow from '../images/left-arrow.png'
 import '../styles/loginsignin.css'
+import Axios from 'axios'
 
 const SignUpForm = (props:any) => {
     
@@ -17,7 +18,13 @@ const SignUpForm = (props:any) => {
     })
 
     const handleClickRegister = (values:any) => {
-            console.log(values)
+            Axios.post("https://localhost:5173/signup", {
+                email: values.email,
+                password: values.password,
+                username: values.username
+            }).then((response) =>{
+                console.log(response)
+            })
         }
     return(
         <div className="inter-font container">
