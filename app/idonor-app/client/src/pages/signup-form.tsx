@@ -4,6 +4,8 @@ import * as yup from "yup"
 import Arrow from '../images/left-arrow.png'
 import '../styles/loginsignin.css'
 import Axios from 'axios'
+import { CgArrowLeft } from "react-icons/cg";
+
 
 const SignUpForm = (props:any) => {
     
@@ -18,7 +20,7 @@ const SignUpForm = (props:any) => {
     })
 
     const handleClickRegister = (values:any) => {
-            Axios.post("https://localhost:5173/signup", {
+            Axios.post("http://localhost:5173/signup", {
                 email: values.email,
                 password: values.password,
                 username: values.username
@@ -28,7 +30,7 @@ const SignUpForm = (props:any) => {
         }
     return(
         <div className="inter-font container">
-            <img src={Arrow} onClick={() => props.changePage(0)} className="arrowButton" alt="voltar" title="voltar"/>
+            <CgArrowLeft onClick={() => props.changePage(0)} className="arrowButton" title="voltar" size={30}/>
             <div className="text">
                 <h2>Inscreva-se</h2>
                 <p>Crie sua conta e salve vidas</p>
@@ -66,6 +68,7 @@ const SignUpForm = (props:any) => {
                         <ErrorMessage name="confirmPassword" component="span" className="form-error"></ErrorMessage>
                     </div>
                     <button className="red-Button" type="submit">Inscreva-se</button>
+                    <br/><br/>
                     <p className="align-text-center">Já possui uma conta? <a className="red-Color inter-semibold-font" onClick={() => props.changePage(1)}>Faça Login</a></p>
                 </Form>
             </Formik>

@@ -4,6 +4,7 @@ import * as yup from "yup"
 import Arrow from '../images/left-arrow.png'
 import '../styles/loginsignin.css'
 import Axios from 'axios'
+import { CgArrowLeft } from "react-icons/cg";
 
 const LoginForm = (props:any) => {
     
@@ -17,7 +18,8 @@ const LoginForm = (props:any) => {
         }
     return(
         <div className="inter-font container">
-            <img src={Arrow} onClick={() => props.changePage(0)} className="arrowButton" alt="voltar" title="voltar"/>
+            
+            <CgArrowLeft onClick={() => props.changePage(0)} className="arrowButton" title="voltar" size={30}/>
             <div className="text">
                 <h2>Seja<br/>bem-vindo 🖐️</h2>
                 <p>Entre na sua conta</p>
@@ -47,6 +49,7 @@ const LoginForm = (props:any) => {
                     <button className="red-Button" type="submit">Login</button>
                 </Form>
             </Formik>
+            <br/>
             <p className="align-text-center">Não possui uma conta? <a className="red-Color inter-semibold-font" onClick={() => props.changePage(2)}>Inscreva-se</a></p>
         </div>
     )
