@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.tsx",
   "scripts": {
-    "start": "node index.tsx",
-    "dev": "nodemon index.tsx",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,7 +14,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "mysql": "^2.18.1",
-    "proxy": "http://localhost:5173",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "typescript": "^4.8.4"
   }
 }

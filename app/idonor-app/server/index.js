@@ -18,22 +18,23 @@ app.post("/signup", (req, res) => {
     const password = req.body.password;
     const name = req.body.name;
 
-    db.query("SELECT * FROM users WHERE email = ?", [email], (err, result) => {
-        if(err){
-            res.send(err)
-        }
-        if(result.length == 0){
-            db.query("INSERT INTO users (email, password, name) VALUES (?, ?, ?)", [email, password, name], (err, result) =>{
-                if(err){
-                    res.send(err)
-                }
+    res.send({msg: "Ok"});
+    // db.query("SELECT * FROM users WHERE email = ?", [email], (err, result) => {
+    //     if(err){
+    //         res.send(err)
+    //     }
+    //     if(result.length == 0){
+    //         db.query("INSERT INTO users (email, password, name) VALUES (?, ?, ?)", [email, password, name], (err, result) =>{
+    //             if(err){
+    //                 res.send(err)
+    //             }
 
-                res.send({msg: "Cadastrado com sucesso"})
-            })
-        }else{
-            res.send({msg: "Usuário já cadastrado"})
-        }
-    })
+    //             res.send({msg: "Cadastrado com sucesso"})
+    //         })
+    //     }else{
+    //         res.send({msg: "Usuário já cadastrado"})
+    //     }
+    // })
 })
 
 app.get("/", (req, res) =>{
@@ -47,6 +48,6 @@ app.get("/", (req, res) =>{
         )
 })
 
-app.listen(5173, () => {
-    console.log("Rodando na porta 5173");
+app.listen(3001, () => {
+    console.log("Rodando na porta 3001");
 });

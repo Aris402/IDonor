@@ -18,7 +18,7 @@ const SignUpForm = (props:any) => {
     })
 
     const handleClickRegister = (values:any) => {
-            Axios.post("http://localhost:5173/signup", {
+            Axios.post("http://localhost:3001/signup", {
                 email: values.email,
                 password: values.password,
                 name: values.name
