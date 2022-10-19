@@ -1,7 +1,5 @@
 import {Formik, Form, Field, ErrorMessage} from "formik"
-import * as React from 'react';
 import * as yup from "yup"
-import Arrow from '../images/left-arrow.png'
 import '../styles/loginsignin.css'
 import Axios from 'axios'
 import { CgArrowLeft } from "react-icons/cg";
@@ -23,7 +21,7 @@ const SignUpForm = (props:any) => {
             Axios.post("http://localhost:5173/signup", {
                 email: values.email,
                 password: values.password,
-                username: values.username
+                name: values.name
             }).then((response) =>{
                 console.log(response)
             })

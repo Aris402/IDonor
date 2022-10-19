@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const mysql = require("mysql");
 
@@ -15,14 +16,14 @@ app.use(cors())
 app.post("/signup", (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-    const username = req.body.username;
+    const name = req.body.name;
 
     db.query("SELECT * FROM users WHERE email = ?", [email], (err, result) => {
         if(err){
             res.send(err)
         }
         if(result.length == 0){
-            db.query("INSERT INTO users (email, password, username) VALUES (?, ?, ?)", [email, password, username], (err, result) =>{
+            db.query("INSERT INTO users (email, password, name) VALUES (?, ?, ?)", [email, password, name], (err, result) =>{
                 if(err){
                     res.send(err)
                 }
