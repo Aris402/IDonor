@@ -1,0 +1,36 @@
+
+.red-circle{
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #E83838;
+}
+
+.welcome-Page{
+    max-width: 30em;
+    margin: auto;
+    padding: 0 15px 0 15px;
+}
+
+.welcome-texts{
+    margin-bottom: 40px;
+}
+
+.flex-column-mobile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo-Idonor{
+    margin: 15px 0 80px 0;
+}
+
+.pink-Button{
+    background-color: #FEC2C2;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 63px;
+    font-size: 16px;
+}
