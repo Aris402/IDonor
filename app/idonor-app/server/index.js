@@ -19,22 +19,22 @@ app.post("/signup", (req, res) => {
     const name = req.body.name;
 
     res.send({msg: "Ok"});
-    // db.query("SELECT * FROM users WHERE email = ?", [email], (err, result) => {
-    //     if(err){
-    //         res.send(err)
-    //     }
-    //     if(result.length == 0){
-    //         db.query("INSERT INTO users (email, password, name) VALUES (?, ?, ?)", [email, password, name], (err, result) =>{
-    //             if(err){
-    //                 res.send(err)
-    //             }
+    db.query("SELECT * FROM users WHERE email = ?", [email], (err, result) => {
+         if(err){
+             res.send(err)
+         }
+         if(result.length == 0){
+             db.query("INSERT INTO users (email, password, name) VALUES (?, ?, ?)", [email, password, name], (err, result) =>{
+                 if(err){
+                     res.send(err)
+                 }
 
-    //             res.send({msg: "Cadastrado com sucesso"})
-    //         })
-    //     }else{
-    //         res.send({msg: "Usuário já cadastrado"})
-    //     }
-    // })
+                 res.send({msg: "Cadastrado com sucesso"})
+             })
+         }else{
+             res.send({msg: "Usuário já cadastrado"})
+         }
+     })
 })
 
 app.get("/", (req, res) =>{
