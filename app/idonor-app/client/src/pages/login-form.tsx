@@ -12,8 +12,13 @@ const LoginForm = (props:any) => {
     })
 
     const handleClickLogin = (values:any) => {
-            console.log(values)
-        }
+            Axios.post("http://localhost:3001/login", {
+                email: values.email,
+                password: values.password,
+            }).then((response) => {
+                console.log(response);
+            });
+    }
     return(
         <div className="inter-font container">
             
