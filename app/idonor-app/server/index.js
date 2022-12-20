@@ -19,6 +19,7 @@ app.post("/signup", (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     const name = req.body.name;
+    const page = req.body.page
 
     res.send({msg: "Ok"});
     db.query("SELECT * FROM users WHERE email = ?", [email], (err, result) => {
@@ -31,7 +32,7 @@ app.post("/signup", (req, res) => {
                     if(err){
                         res.send(err)
                     }
-   
+                    page = 3;
                     res.send({msg: "Cadastrado com sucesso"})
                 })
             })
@@ -42,7 +43,7 @@ app.post("/signup", (req, res) => {
 })
 
 app.get("/", (req, res) =>{
-    res.send("Hello world")
+    
 })
 
 app.post("/login", (req, res) => {
