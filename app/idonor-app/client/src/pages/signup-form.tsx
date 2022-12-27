@@ -24,6 +24,9 @@ const SignUpForm = (props:any) => {
                 name: values.name
             }).then((response) =>{
                 console.log(response)
+                if(response.data.msg == "Cadastrado com sucesso"){
+                    props.changePage(3);
+                }
             })
         }
     return(
@@ -57,11 +60,11 @@ const SignUpForm = (props:any) => {
                     <div className="login-form-div">
                         <label htmlFor="senha">Senha</label>
 
-                        <Field name="password" id="senha" className="form-field inter-font" placeholder="Sua senha"></Field>
+                        <Field name="password" id="senha" className="form-field inter-font" placeholder="Sua senha" type="password"></Field>
 
                         <ErrorMessage name="password" component="span" className="form-error"></ErrorMessage>
                     </div> <div className="login-form-div">
-                        <Field name="confirmPassword" className="form-field inter-font" placeholder="Confirme sua senha"></Field>
+                        <Field name="confirmPassword" className="form-field inter-font" placeholder="Confirme sua senha" type="password"></Field>
 
                         <ErrorMessage name="confirmPassword" component="span" className="form-error"></ErrorMessage>
                     </div>
