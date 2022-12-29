@@ -3,10 +3,13 @@ import * as yup from "yup"
 import '../styles/loginsignin.css'
 import Axios from 'axios'
 import { CgArrowLeft } from "react-icons/cg";
-
+import { useEffect, useState } from "react";
+import SignUpForm2 from "./signup-form2";
 
 const SignUpForm = (props:any) => {
-    
+
+    const [userEmail, setEmail] = useState();
+
     const validationRegister = yup.object().shape({
         name: yup.string().required("Este é um campo obrigatório"),
 
@@ -23,12 +26,27 @@ const SignUpForm = (props:any) => {
                 password: values.password,
                 name: values.name
             }).then((response) =>{
+                
                 console.log(response)
                 if(response.data.msg == "Cadastrado com sucesso"){
                     props.changePage(3);
+                    setEmail(response.data.emailSend);
+                    /*Axios.post("http://localhost:3001/getName", {
+                        emailSend: response.data.emailSend
+                    }).then((response) => {
+
+                    })*/
                 }
             })
         }
+    /*const getEmail = () => {
+        return(
+            <div>
+                <span>{userEmail}</span>
+            </div>
+        )
+    }*/
+        <SignUpForm2 emailSend={userEmail}/>
     return(
         <div className="inter-font container">
             <CgArrowLeft onClick={() => props.changePage(0)} className="arrowButton" title="voltar" size={30}/>

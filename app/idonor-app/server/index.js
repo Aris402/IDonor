@@ -5,7 +5,6 @@ const mysql = require("mysql");
 const bcrypt = require("bcrypt");
 const saltRounds = 10
 
-
 const db = mysql.createPool({
     host: "localhost",
     user: "root",
@@ -32,7 +31,7 @@ app.post("/signup", (req, res) => {
                     if(err){
                         res.send(err)
                     } else{
-                        res.send({msg: "Cadastrado com sucesso"})
+                        res.send({msg: "Cadastrado com sucesso", emailSend: email})
                     }
                 })
             })
@@ -66,7 +65,6 @@ app.post("/signup2", (req, res) => {
 app.post("/login", (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-    const name = req.body.name;
 
     db.query("SELECT * FROM users WHERE email = ?", [email], (err, result) =>{
         if(err){
@@ -87,6 +85,7 @@ app.post("/login", (req, res) => {
 })
 
 app.get("/getName", (req, res) =>{
+    
     db.query("SELECT name FROM users WHERE email = ?", [email], (err, result) => {
         if(err){
             console.log(err);
@@ -95,6 +94,18 @@ app.get("/getName", (req, res) =>{
         }
     })
 })
+
+/*app.get("/getName", (req, res) =>{
+    const email = req.params.email
+    
+    db.query("SELECT name FROM users WHERE email = ?", [email], (err, result) => {
+        if(err){
+            console.log(err);
+        } else{
+            res.send(result);
+        }
+    })
+})*/
 
 app.listen(3001, () => {
     console.log("Rodando na porta 3001");

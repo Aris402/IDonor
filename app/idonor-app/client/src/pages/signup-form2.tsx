@@ -4,10 +4,10 @@ import "../styles/loginsignin.css"
 import Axios from 'axios'
 import { useEffect, useState } from "react";
 
-const SignUpForm2 = (pros:any) => {
+const SignUpForm2 = (props:any) => {
+
     const [userName, setName] = useState();
-
-
+    
     useEffect(() => {
         Axios.get("http://localhost:3001/getName").then((response) => {
             setName(response.data);
@@ -38,10 +38,11 @@ const SignUpForm2 = (pros:any) => {
         })
     }
 
+
     return(
         <div className="inter-font container">
             <div className="text">
-                <h2>Olá, {userName}!❣️</h2>
+                <h2>Olá, {props.emailSend}!❣️</h2>
                 <br/><br/>
                 <p>Preencha os dados corretamente:</p>
             </div>
