@@ -15,6 +15,7 @@ const db = mysql.createPool({
 app.use(express.json())
 app.use(cors())
 
+var userData = [{}];
 
 app.post("/signup", (req, res) => {
     const email = req.body.email;
@@ -31,7 +32,9 @@ app.post("/signup", (req, res) => {
                     if(err){
                         res.send(err)
                     } else{
-                        res.send({msg: "Cadastrado com sucesso", emailSend: email})
+                        userData[0] = email;
+                        userData[1] = name;
+                        res.send({msg: "Cadastrado com sucesso", nameUser: name, userEmail: email})
                     }
                 })
             })
@@ -47,19 +50,16 @@ app.post("/signup2", (req, res) => {
     const state = req.body.state;
     const city = req.body.city;
     const cellphone = req.body.cellphone;
-
-    db.query("SELECT * FROM users WHERE email = ?", [email], (err, result) => {
-         if(err){
-             res.send(err)
-         }
-         db.query("INSERT INTO users (bltype, birthdate, state, city, cellphone) VALUES (?, ?, ?, ?, ?)", [bltype, birthdate, state, city, cellphone], (err, response) =>{
-            if(err){
-                res.send(err)
-            } else{
-                res.send({msg: "Dados cadastrados com sucesso"})
-            }
-        })
-     })
+    
+    db.query("UPDATE users SET bltype = ?, birthdate = ?, state = ?, city = ?, cellphone = ? WHERE email = ?", [bltype, birthdate, state, city, cellphone, userData[0]], (err, response) =>{
+        if(err){
+            res.send(err)
+        } else{
+            userData[2] = bltype;
+            userData[3] = 
+            res.send({msg: "Dados cadastrados com sucesso"})
+        }
+    })
 })
 
 app.post("/login", (req, res) => {
@@ -84,28 +84,9 @@ app.post("/login", (req, res) => {
     })
 })
 
-app.get("/getName", (req, res) =>{
-    
-    db.query("SELECT name FROM users WHERE email = ?", [email], (err, result) => {
-        if(err){
-            console.log(err);
-        } else{
-            res.send(result);
-        }
-    })
+app.get("/getUser" , (req, res) =>{
+    res.send()
 })
-
-/*app.get("/getName", (req, res) =>{
-    const email = req.params.email
-    
-    db.query("SELECT name FROM users WHERE email = ?", [email], (err, result) => {
-        if(err){
-            console.log(err);
-        } else{
-            res.send(result);
-        }
-    })
-})*/
 
 app.listen(3001, () => {
     console.log("Rodando na porta 3001");
